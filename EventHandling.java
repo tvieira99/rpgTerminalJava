@@ -19,7 +19,6 @@ public class EventHandling {
       if (e instanceof CustomEvent) {
         CustomEvent ce = (CustomEvent) e;
         Chat.newLine(ce.getDialog());
-        ce.executeEvent();
       }
       System.out.print("\n");
     }

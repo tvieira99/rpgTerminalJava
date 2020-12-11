@@ -19,7 +19,11 @@ class Player {
     this.nome = nome;
   }
 
-  public void getItem(Item item){
-    items.add(item);
+  public ArrayList<Item> getItems(){
+    return items;
+  }
+
+  public void setItems(ArrayList<Item> items) {
+    this.items = items;
   }
 }
