@@ -4,6 +4,6 @@ public class Dialog extends Event {
   }
 
   public String getDialog() {
-    return getDialog();
+    return super.getDialog();
   }
 }

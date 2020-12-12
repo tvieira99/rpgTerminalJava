@@ -11,35 +11,54 @@ public class EventHandling {
     Scanner sc = new Scanner(System.in);
     Tree<Event> tree = this.eventTree;
     do {
-      Chat.clearScreen();
+      //Chat.clearScreen();
       Event e = tree.getHead();
       if (e instanceof Dialog) {
         Dialog t = (Dialog) e;
         Chat.newLine(t.getDialog());
-        sc.nextLine(); // ENTER PRA PASSAR DE DIÁLOGO
+        sc.nextLine(); // ENTER PRA PASSAR DE DIALOGO
         Collection<Tree<Event>> sucessor = tree.getSubTrees();
         if (sucessor.size() != 1)
           System.err.print("MAIS DE UM DIALOGO PARA DIALOGO SIMPLES! SEGUINDO O CAMINHO PADRÃO!");
         tree = tree.getSucessorByIndex(0); // Seguindo o primeiro sucessor
       }
       if (e instanceof CustomEvent) {
+        
         CustomEvent ce = (CustomEvent) e;
-        Chat.newLine(ce.getDialog()); // ENTER PRA PASSAR DE DIÁLOGO
+        Chat.newLine(ce.getDialog()); // ENTER PRA PASSAR DE DIALOGO
         ArrayList<String> answers = ce.getAnswers();
-        Chat.newWarning("Responda apenas com número!\n");
-        int option = sc.nextInt();
+        int option = -1;
+        for (String answer : answers){
+          Chat.newLine(answer);
+        }
+        Chat.newWarning("Escolha uma resposta digitando o número da posição dela!\n");
+        while(true){
+          option = sc.nextInt();
+          if (ce.handleEventFunction() != null){
+            ce.handleEventFunction();
+            break;
+          }
+          else {
+            if (option == ce.getRightAnswer()){
+              ce.rightAnswer();
+              break;
+            }
+            else System.out.println("Tenta dnv");
+          }
+        }
+        
+        /* option = sc.nextInt();
         while (option > answers.size() - 1) {
-          Chat.clearScreen();
+          //Chat.clearScreen();
           for (String answer : answers) {
             Chat.newLine(answer);
           }
           option = sc.nextInt();
-        }
-        ce.handleEventFunction();
+        } */
         tree = tree.getSucessorByIndex(option);
       }
       System.out.print("\n");
       sc.close();
-    } while (tree.getSuccessors(tree.getHead()).size() == 0); // FALHA SE O NÃO HOUVER MAIS FILHO NO NÓ
+    } while (tree.getSuccessors(tree.getHead()).size() == 0); // FALHA SE O NAO HOUVER MAIS FILHO NO NO
   }
 }
