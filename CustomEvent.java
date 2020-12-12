@@ -6,29 +6,23 @@ class CustomEvent extends Event {
   private ArrayList<String> answers;
   private int rightAnswer;
   private String rightDecision;
-  private CustomEventFunction customEventFunction;
 
   public CustomEvent(String dialog, int rightAnswer, ArrayList<String> answers,
-      CustomEventFunction customEventFunction, String rightDecision) {
+   String rightDecision) {
     super(dialog);
     this.answers = answers;
     this.rightAnswer = rightAnswer;
     this.rightDecision = rightDecision;
-    this.customEventFunction = customEventFunction;
   }
 
   public String getDialog() {
     return super.getDialog();
   }
 
-  public CustomEventFunction handleEventFunction() {
-    return this.customEventFunction;
-  }
-
   public ArrayList<String> getAnswers() {
     return answers;
   }
-  public int getRightAnswer(){
+  public Integer getRightAnswer(){
     return this.rightAnswer;
   }
   public String rightAnswer(){

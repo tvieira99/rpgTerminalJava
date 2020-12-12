@@ -4,7 +4,7 @@ public class Chat {
     System.out.flush();
   }
   public static void newLine(String s){
-    System.out.print(">>> ");
+    System.out.print("\n>>> ");
     System.out.print(s);
   }
   public static void newWarning(String s){
