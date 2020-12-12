@@ -7,4 +7,7 @@ public class Chat {
     System.out.print(">>> ");
     System.out.print(s);
   }
+  public static void newWarning(String s){
+    System.out.print("! ");
+  }
 }

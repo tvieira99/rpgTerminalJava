@@ -9,17 +9,17 @@ import java.util.HashMap;
   *          Object's type in the tree.
 */
 
-public class EventTree<T> {
+public class Tree<T> {
 
   private T head;
 
-  private ArrayList<EventTree<T> > leafs = new ArrayList<EventTree<T>>();
+  private ArrayList<Tree<T> > leafs = new ArrayList<Tree<T>>();
 
-  private EventTree<T> parent = null;
+  private Tree<T> parent = null;
 
-  private HashMap<T, EventTree<T> > locate = new HashMap<T, EventTree<T>>();
+  private HashMap<T, Tree<T> > locate = new HashMap<T, Tree<T>>();
 
-  public EventTree(T head){
+  public Tree(T head){
     this.head = head;
     locate.put(head, this);
   }
@@ -32,8 +32,8 @@ public class EventTree<T> {
     }
   }
 
-  public EventTree<T> addLeaf(T leaf) {
-    EventTree<T> t = new EventTree<T>(leaf);
+  public Tree<T> addLeaf(T leaf) {
+    Tree<T> t = new Tree<T>(leaf);
     leafs.add(t);
     t.parent = this;
     t.locate = this.locate;
@@ -41,8 +41,8 @@ public class EventTree<T> {
     return t;
   }
 
-  public EventTree<T> setAsParent(T parentRoot) {
-    EventTree<T> t = new EventTree<T>(parentRoot);
+  public Tree<T> setAsParent(T parentRoot) {
+    Tree<T> t = new Tree<T>(parentRoot);
     t.leafs.add(this);
     this.parent = t;
     t.locate = this.locate;
@@ -55,31 +55,36 @@ public class EventTree<T> {
     return head;
   }
 
-  public EventTree<T> getTree(T element) {
+  public Tree<T> getTree(T element) {
     return locate.get(element);
   }
 
-  public EventTree<T> getParent() {
+  public Tree<T> getParent() {
     return parent;
   }
 
   public Collection<T> getSuccessors(T root) {
     Collection<T> successors = new ArrayList<T>();
-    EventTree<T> tree = getTree(root);
+    Tree<T> tree = getTree(root);
     if (null != tree) {
-      for (EventTree<T> leaf : tree.leafs) {
+      for (Tree<T> leaf : tree.leafs) {
         successors.add(leaf.head);
       }
     }
     return successors;
   }
 
-  public Collection<EventTree<T>> getSubTrees() {
+  public Collection<Tree<T>> getSubTrees() {
     return leafs;
   }
 
-  public static <T> Collection<T> getSuccessors(T of, Collection<EventTree<T>> in) {
-    for (EventTree<T> tree : in) {
+  public Tree<T> getSucessorByIndex(int i){
+    if(leafs.size()-1 < i) return null;
+    return leafs.get(i);
+  }
+
+  public static <T> Collection<T> getSuccessors(T of, Collection<Tree<T>> in) {
+    for (Tree<T> tree : in) {
       if (tree.locate.containsKey(of)) {
         return tree.getSuccessors(of);
       }
@@ -101,7 +106,7 @@ public class EventTree<T> {
       inc = inc + " ";
     }
     s = inc + head;
-    for (EventTree<T> child : leafs) {
+    for (Tree<T> child : leafs) {
       s += "\n" + child.printTree(increment + indent);
     }
     return s;

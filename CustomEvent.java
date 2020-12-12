@@ -1,18 +1,27 @@
 import java.util.*;
 
+//USE PARA FAZER DIÁLOGOS COM QUESTÕES. handleEventFunction também pode servir como trigger para uma ação personalizada
+//PASSE NULL PARA NÃO DEFINIR UMA FUNÇÃO PERSONALIZADA
 class CustomEvent extends Event {
-  private ArrayList<Item> items;
+  private ArrayList<String> answers;
+  private CustomEventFunction customEventFunction;
 
-  CustomEvent(String dialog, ArrayList<Item> items, Boolean rightAnswer, ArrayList<String> answers) {
+  public CustomEvent(String dialog, Boolean rightAnswer, ArrayList<String> answers,
+      CustomEventFunction customEventFunction) {
     super(dialog);
-    this.items = items;
+    this.answers = answers;
+    this.customEventFunction = customEventFunction;
   }
 
   public String getDialog() {
     return getDialog();
   }
 
-  public void handleEventFunction(CustomEventFunction customFunction) {
-    customFunction.customEventFunction(this.items);
+  public CustomEventFunction handleEventFunction() {
+    return this.customEventFunction;
+  }
+
+  public ArrayList<String> getAnswers() {
+    return answers;
   }
 }
