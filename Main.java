@@ -12,17 +12,17 @@ public class Main {
     Dialog dialog4 = new Dialog(
         "-A grande plateia te deixa nervoso, mas você estranhamente não sente estranheza, que engraçado-");
     Dialog dialog5 = new Dialog("-Você vê rostos familiares, mas não conhece essas pessoas-");
-    Dialog dialog6 = new Dialog(player.getNome() + ": sim.");
+    Dialog dialog6 = new Dialog(player.getNome() + ": Sim.");
     Dialog dialog7 = new Dialog("Apresentador: Então vamos começar! Lembrando que errar não é uma boa ideia!");
     Dialog dialog8 = new Dialog(
         "-Ao mesmo tempo que parece que é sua primeira vez aqui, você sente que já sabe as regras-");
 
     ArrayList<String> customEvent1Answers = new ArrayList<>();
-    customEvent1Answers.add("1. Goblin Assado");
-    customEvent1Answers.add("2. Geleia de slime");
-    customEvent1Answers.add("3. Batata assada com mel");
+    customEvent1Answers.add("1. Goblin Assado\n");
+    customEvent1Answers.add("2. Geleia de slime\n");
+    customEvent1Answers.add("3. Batata assada com mel\n");
     customEvent1Answers.add("4. Melaxi");
-    CustomEvent customEvent1 = new CustomEvent("Apresentador: Qual a comida preferida do Rei?", 2, customEvent1Answers,
+    CustomEvent customEvent1 = new CustomEvent("Apresentador: Qual a comida preferida do Rei?\n", 2, customEvent1Answers,
         "Apresentador: Resposta exata!", respostaErrada);
 
     Dialog dialog9 = new Dialog(
@@ -30,11 +30,11 @@ public class Main {
     Dialog dialog10 = new Dialog("Apresentador: Vamos a próxima, um pouco mais complicada.");
 
     ArrayList<String> customEvent2Answers = new ArrayList<>();
-    customEvent2Answers.add("1. Super Classe");
-    customEvent2Answers.add("2. Magia Pai");
-    customEvent2Answers.add("3. Super Magia");
+    customEvent2Answers.add("1. Super Classe\n");
+    customEvent2Answers.add("2. Magia Pai\n");
+    customEvent2Answers.add("3. Super Magia\n");
     customEvent2Answers.add("4. Magia Suprema");
-    CustomEvent customEvent2 = new CustomEvent("Apresentador: Na magia, como é chamado as magias poderosas que tem magias mais fracas como filhos?", 0, customEvent2Answers, "Apresentador: Exatamente!", respostaErrada);
+    CustomEvent customEvent2 = new CustomEvent("Apresentador: Na magia, como é chamado as magias poderosas que tem magias mais fracas como filhos?\n", 0, customEvent2Answers, "Apresentador: Exatamente!", respostaErrada);
     
     Dialog dialog11 =  new Dialog("Apresentador: As Super Classes são chamadas assim graças a tecnologia!");
     Dialog dialog12 =  new Dialog("Apresentador: Ainda bem que *" + player.getNome() + "* lembra das regras!");
@@ -51,22 +51,22 @@ public class Main {
     Dialog dialog23 = new Dialog("Apresentador: Temos mais perguntas pela frente!");
 
     ArrayList<String> customEvent3Answers = new ArrayList<>();
-    customEvent3Answers.add("1. Lua");
-    customEvent3Answers.add("2. Europa");
-    customEvent3Answers.add("3. Reia");
+    customEvent3Answers.add("1. Lua\n");
+    customEvent3Answers.add("2. Europa\n");
+    customEvent3Answers.add("3. Reia\n");
     customEvent3Answers.add("4. Titã");
-    CustomEvent customEvent3 = new CustomEvent("Apresentador: Qual o nome da nossa maior lua?", 3, customEvent3Answers, "Apresentador: Corretamente!", respostaErrada);
+    CustomEvent customEvent3 = new CustomEvent("Apresentador: Qual o nome da nossa maior lua?\n", 3, customEvent3Answers, "Apresentador: Corretamente!", respostaErrada);
 
     Dialog dialog24 = new Dialog("Apresentador: Temos tantas luas, mas aquela amarelinha lá no céu se destaca!");
     Dialog dialog25 = new Dialog("Apresentador: Eu não lembro quem deu o nome pra essa lua agora, mas é um bom nome!");
     Dialog dialog26 = new Dialog("Apresentador: Eu ainda lembro quando a valkyria quase destruiu ela, ia ser tão triste...");
 
     ArrayList<String> customEvent4Answers = new ArrayList<>();
-    customEvent4Answers.add("1. Eu vim com os meus amigos");
-    customEvent4Answers.add("2. Eu vim pelo deserto para ficar mais forte");
-    customEvent4Answers.add("3. Eu estrou atrás de riquezas");
+    customEvent4Answers.add("1. Eu vim com os meus amigos\n");
+    customEvent4Answers.add("2. Eu vim pelo deserto para ficar mais forte\n");
+    customEvent4Answers.add("3. Eu estrou atrás de riquezas\n");
     customEvent4Answers.add("4. Eu abri um arquivo java");
-    CustomEvent customEvent4 = new CustomEvent("Apresentador: Bom, você lembra como chegou aqui?", 1, customEvent4Answers, "Apresentador: Você só acerta!", respostaErrada);
+    CustomEvent customEvent4 = new CustomEvent("Apresentador: Bom, você lembra como chegou aqui?\n", 1, customEvent4Answers, "Apresentador: Você só acerta!", respostaErrada);
 
     Dialog dialog27 = new Dialog("Apresentador: Você está indo bem, está batendo os seus recordes!");
     Dialog dialog28 = new Dialog("-Você pensa: Meus recordes?-");
@@ -75,18 +75,18 @@ public class Main {
     Dialog dialog31 = new Dialog("Apresentador: Mas o SHOW não pode parar! Vamos a próxima pergunta!");
     
     ArrayList<String> customEvent5Answers = new ArrayList<>();
-    customEvent5Answers.add("1. 24");
-    customEvent5Answers.add("2. 66");
-    customEvent5Answers.add("3. 1");
+    customEvent5Answers.add("1. 24\n");
+    customEvent5Answers.add("2. 66\n");
+    customEvent5Answers.add("3. 1\n");
     customEvent5Answers.add("4. 29");
-    CustomEvent customEvent5 = new CustomEvent("Apresentador: Qual o próximo número na sequência: 1, 12, 18 ?", 2, customEvent5Answers, "Apresentador: Certa! Padrões, padrões, quem gosta deles não é verdade?", respostaErrada);
+    CustomEvent customEvent5 = new CustomEvent("Apresentador: Qual o próximo número na sequência: 1, 12, 18 ?\n", 2, customEvent5Answers, "Apresentador: Certa! Padrões, padrões, quem gosta deles não é verdade?", respostaErrada);
 
     Dialog dialog32 = new Dialog("Apresentador: Vocês humanos são fixados em padrões, até quando chovia vocês achavam que era algo importante, tsc tsc.");
     
     ArrayList<String> customEvent6Answers = new ArrayList<>();
-    customEvent6Answers.add("1. !");
+    customEvent6Answers.add("1. !\n");
     customEvent6Answers.add("2. ?");
-    CustomEvent customEvent6 = new CustomEvent("?", 0, customEvent6Answers, "Apresentador: Haha, muito bem, isso é o que eu chamo de streak.", respostaErrada);
+    CustomEvent customEvent6 = new CustomEvent("?\n", 0, customEvent6Answers, "Apresentador: Haha, muito bem, isso é o que eu chamo de streak.\n", respostaErrada);
 
     Dialog dialog33 = new Dialog("Apresentador: Se bem que seus amigos foram muito mais rápidos que você.");
     Dialog dialog34 = new Dialog("-Você se lembra de alguns nomes-");
@@ -96,26 +96,26 @@ public class Main {
     Dialog dialog38 = new Dialog("Apresentador: Próxima pergunta!");
 
     ArrayList<String> customEvent7Answers = new ArrayList<>();
-    customEvent7Answers.add("1. O Banco de Dados");
-    customEvent7Answers.add("2. Guardião do Portão");
-    customEvent7Answers.add("3. O Ponto Cego de Deus");
+    customEvent7Answers.add("1. O Banco de Dados\n");
+    customEvent7Answers.add("2. Guardião do Portão\n");
+    customEvent7Answers.add("3. O Ponto Cego de Deus\n");
     customEvent7Answers.add("4. A Fechadura");
-    CustomEvent customEvent7 = new CustomEvent("Apresentador: Quem é o verdadeiro SCP-001?", 0, customEvent7Answers, "Apresentador: Correta! O Banco de Dados é incrível não? Faz total sentido nós sermos a anomalia!", respostaErrada);
+    CustomEvent customEvent7 = new CustomEvent("Apresentador: Quem é o verdadeiro SCP-001?\n", 0, customEvent7Answers, "Apresentador: Correta! O Banco de Dados é incrível não? Faz total sentido nós sermos a anomalia!", respostaErrada);
 
     ArrayList<String> customEvent8Answers = new ArrayList<>();
-    customEvent8Answers.add("1. Sim, uma água");
-    customEvent8Answers.add("2. Prefiro um suco");
+    customEvent8Answers.add("1. Sim, uma água\n");
+    customEvent8Answers.add("2. Prefiro um suco\n");
     customEvent8Answers.add("3. Não");
-    CustomEvent customEvent8 = new CustomEvent("Apresentador: Estamos quase no final do show, quer uma água ou algo assim?", 2, customEvent8Answers, "Apresentador: Hehe, correta! Ótimo.", respostaErrada);
+    CustomEvent customEvent8 = new CustomEvent("Apresentador: Estamos quase no final do show, quer uma água ou algo assim?\n", 2, customEvent8Answers, "Apresentador: Hehe, correta! Ótimo.", respostaErrada);
 
     Dialog dialog39 = new Dialog("Apresentador vamos a nossa penúltima pergunta!");
 
     ArrayList<String> customEvent9Answers =  new ArrayList<>();
-    customEvent9Answers.add("1. Aurora");
-    customEvent9Answers.add("2. " + player.getNome());
-    customEvent9Answers.add("3. Hildo");
+    customEvent9Answers.add("1. Aurora\n");
+    customEvent9Answers.add("2. " + player.getNome() + "\n");
+    customEvent9Answers.add("3. Hildo\n");
     customEvent9Answers.add("4. V");
-    CustomEvent customEvent9 = new CustomEvent("Apresentador: Qual o seu nome?", 0, customEvent9Answers, "Apresentador: Mais ou menos correta, pelo menos no momento. Mas está VALENDO!", respostaErrada);
+    CustomEvent customEvent9 = new CustomEvent("Apresentador: Qual o seu nome?\n", 0, customEvent9Answers, "Apresentador: Mais ou menos correta, pelo menos no momento. Mas está VALENDO!", respostaErrada);
 
     Dialog dialog40 = new Dialog("Apresentador: Incrível, você chegou aqui!");
     Dialog dialog41 = new Dialog("Apresentador: Parabéns Aurora e " + player.getNome() + " grande equipe!");
@@ -123,11 +123,11 @@ public class Main {
     Dialog dialog43 = new Dialog("Apresentador: Vamos a ÚLTIMA pergunta!");
 
     ArrayList<String> customEvent10Answers = new ArrayList<>();
-    customEvent10Answers.add("1. Kenichiro Yoshida");
-    customEvent10Answers.add("2. Bill Gates");
-    customEvent10Answers.add("3. Satya Nadella");
+    customEvent10Answers.add("1. Kenichiro Yoshida\n");
+    customEvent10Answers.add("2. Bill Gates\n");
+    customEvent10Answers.add("3. Satya Nadella\n");
     customEvent10Answers.add("4. Steve Jobs");
-    CustomEvent customEvent10 = new CustomEvent("Apresentador: Qual o nome do atual CEO da Microsoft?", 2, customEvent10Answers, "Apresentador: E a resposta está...", respostaErrada);
+    CustomEvent customEvent10 = new CustomEvent("Apresentador: Qual o nome do atual CEO da Microsoft?\n", 2, customEvent10Answers, "Apresentador: E a resposta está...", respostaErrada);
 
     Dialog dialog44 = new Dialog("Apresentador: Está...");
     Dialog dialog45 = new Dialog("-Você sente tudo derretendo, inclusive você mesmo-");
