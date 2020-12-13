@@ -1,18 +1,19 @@
 import java.util.*;
 
-//USE PARA FAZER DIALOGOS COM QUESTOES. handleEventFunction tambem pode servir como trigger para uma açao personalizada
-//PASSE NULL PARA NAO DEFINIR UMA FUNÇAO PERSONALIZADA
+//USE PARA FAZER DIALOGOS COM QUESTOEs
 class CustomEvent extends Event {
   private ArrayList<String> answers;
   private int rightAnswer;
   private String rightDecision;
+  private String wrongDecision;
 
   public CustomEvent(String dialog, int rightAnswer, ArrayList<String> answers,
-   String rightDecision) {
+   String rightDecision, String wrongDecision) {
     super(dialog);
     this.answers = answers;
     this.rightAnswer = rightAnswer;
     this.rightDecision = rightDecision;
+    this.wrongDecision = wrongDecision;
   }
 
   public String getDialog() {
@@ -27,5 +28,8 @@ class CustomEvent extends Event {
   }
   public String rightAnswer(){
     return this.rightDecision;
+  }
+  public String getWrongDecision(){
+    return this.wrongDecision;
   }
 }

@@ -10,6 +10,7 @@ public class EventHandling {
   public void start() {
     Scanner sc = new Scanner(System.in);
     Tree<Event> tree = this.eventTree;
+    Tree<Event> treeCopy = tree;
     do {
       // Chat.clearScreen();
       Event e = tree.getHead();
@@ -28,26 +29,27 @@ public class EventHandling {
         Chat.newLine(ce.getDialog()); // ENTER PRA PASSAR DE DIALOGO
         ArrayList<String> answers = ce.getAnswers();
         Integer option = -1;
+
         for (String answer : answers) {
           Chat.newLine(answer);
         }
+
         System.out.println();
         Chat.newWarning("Escolha uma resposta digitando o número da posição dela!\n");
-        while (true) {
-          option = sc.nextInt();
-          option -= 1; //Para começar do 1
-          sc.nextLine(); //Necessário para o próximo diálogo não receber a nova linha ser pulado
-          if (ce.getRightAnswer() == option) {
-            Chat.newLine(ce.rightAnswer());
-            break;
-          }else{
-            Chat.newLine("Tente Novamente!");
-            System.out.println("");
-          }
+        option = sc.nextInt();
+        option -= 1; // Para começar do 1
+        sc.nextLine(); // Necessário para o próximo diálogo não receber a nova linha ser pulado
+        if (ce.getRightAnswer() == option) {
+          Chat.newLine(ce.rightAnswer());
+          tree = tree.getSucessorByIndex(0);
+          sc.nextLine();
+        } else {
+          Chat.newLine(ce.getWrongDecision());
+          sc.nextLine();
+          tree = treeCopy;
         }
-        tree = tree.getSucessorByIndex(option);
       }
-    }while(tree.getSubTrees().size() != 0);// FALHA SE O NAO HOUVER MAIS FILHO NO NO
+    } while (tree.getSubTrees().size() != 0);// FALHA SE O NAO HOUVER MAIS FILHO NO NO
     sc.close();
   }
 }

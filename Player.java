@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Player {
   private String nome;
 

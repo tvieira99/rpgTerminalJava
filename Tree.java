@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
   * @author ycoppel@google.com (Yohann Coppel)
-  * 
+  * modified by Thiago Vieira (thiagovieira2609@gmail.com)
   * @param <T>
   *          Object's type in the tree.
 */
